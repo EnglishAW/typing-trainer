@@ -12,10 +12,10 @@ type KeyboardKeyProps = {
     isActive: boolean
 }
 
-export const KeyboardKey = (props: KeyboardKeyProps) => {
+export const KeyboardKey = memo((props: KeyboardKeyProps) => {
     const [isFirstLoad, setIsFirstLoad] = useState(true)
     const [isLoaded, setIsLoaded] = useState(false)
-
+    console.log('render')
     // Avoid fading animation on load
     useEffect(() => {
         !isFirstLoad && !isLoaded && setIsLoaded(true)
@@ -28,9 +28,9 @@ export const KeyboardKey = (props: KeyboardKeyProps) => {
     const { isActive, label } = props
 
     return <div className={col(isActive, isLoaded)}>{label}</div>
-}
+})
 
-const col = (isActive, isLoaded) => {
+const col = (isActive, isLoaded): string => {
     const color = isActive ? ACITVE_COLOR : DEFAULT_COLOR
     return css`
         display: flex;
