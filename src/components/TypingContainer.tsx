@@ -21,7 +21,7 @@ export const TypingContainer = () => {
     const [readyForNextChar, setReadyForNextChar] = useState(false)
     const [promptIndex, setPromptIndex] = useState(0)
     const promptText =
-        'abcdabcd is a simple typing trainer built in Preact. Try typing this text!'
+        'This is a simple typing trainer built in Preact. Try typing this text!'
     // Memoize this call to to optimise for restarting the same prompt
     const freshPromptModel = useMemo(() => getNewPromptDetails(promptText), [
         promptText,
