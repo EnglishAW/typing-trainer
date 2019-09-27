@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import { useState } from 'preact/hooks'
 import { css, keyframes } from 'emotion'
 import Char from './PromptChar'
+import { no_select } from '../assets/styles/customClasses'
 
 const ACITVE_COLOR = '#FF00FF'
 const DEFAULT_COLOR = '#DDDDDD'
@@ -98,6 +99,8 @@ const promptBoxClass = isFocused => css`
     font-family: 'Source Code Pro', monospace;
     font-size: 1.5rem;
     clip-path: inset(0% 0% round 10px);
+
+    ${no_select};
 
     ${!isFocused && `filter: blur(4px);`};
     ${!isFocused

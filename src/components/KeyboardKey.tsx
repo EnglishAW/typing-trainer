@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import { css, keyframes } from 'emotion'
 import { useEffect, useState } from 'preact/hooks'
 import { memo } from 'preact/compat'
+import { no_select } from '../assets/styles/customClasses'
 
 const ACITVE_COLOR = '#FF00FF'
 const DEFAULT_COLOR = '#DDDDDD'
@@ -45,12 +46,7 @@ const col = (isActive, isLoaded) => {
         font-weight: 700;
         background-color: ${isActive ? ACITVE_COLOR + '22' : 'transparent'};
 
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        ${no_select};
 
         ${!isActive && isLoaded && `animation: ${fadeInactive} 1s;`};
     `
