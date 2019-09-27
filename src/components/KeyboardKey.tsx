@@ -15,7 +15,7 @@ type KeyboardKeyProps = {
 export const KeyboardKey = memo((props: KeyboardKeyProps) => {
     const [isFirstLoad, setIsFirstLoad] = useState(true)
     const [isLoaded, setIsLoaded] = useState(false)
-    console.log('render')
+
     // Avoid fading animation on load
     useEffect(() => {
         !isFirstLoad && !isLoaded && setIsLoaded(true)
