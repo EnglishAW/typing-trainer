@@ -116,6 +116,9 @@ public
 # FuseBox cache
 .fusebox/
 
+# Build
+dist/
+
 # DynamoDB Local files
 .dynamodb/
 © 2019 GitHub, Inc.
